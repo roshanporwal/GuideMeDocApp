@@ -1,21 +1,19 @@
 import React from 'react';
-import {
-  Text,
-} from 'react-native';
-import { globalstyle } from './globalStylsheet.js';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import MainNavigation from './navigation/MainNavigation.js';
 import NotificationService from './services/push_notif_service.js';
 
 
 const App = () => {
-
+  console.log('in app')
   return (
-    <>
+    <SafeAreaView style={{
+        flex: 1,
+    }}>
+      <MainNavigation />
       <NotificationService />
-      <Text style={globalstyle.normalFont}>Normal Text</Text>
-      <Text style={globalstyle.normalHeading}>NormaL Heading</Text>
-      <Text style={globalstyle.boldHeading}>Bold Heading</Text>
-      <Text style={globalstyle.subTitle}>Subtitle</Text>
-    </>
+      {/* <LoadingScreen /> */}
+    </SafeAreaView>
   );
 };
  
