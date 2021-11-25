@@ -3,12 +3,21 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import DashboardScreen from '../screens/DashboardScreen';
 import { Image, View } from 'react-native';
 import InnerAppNavigation from './InnerAppNavigation';
+import Icon from 'react-native-vector-icons/AntDesign';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabNavigation() {
   return (
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+            tabBarHideOnKeyboard: true,
+            tabBarStyle: [{
+                display: "flex"
+            },
+            null]
+        }} 
+      >
         <Tab.Screen 
             name="InnerAppNavigation" 
             component={InnerAppNavigation} //For navigating in in the dasboard screens
@@ -17,7 +26,7 @@ export default function TabNavigation() {
                 tabBarShowLabel:false,
                 tabBarIcon: ({ focused }) => (
                     <View style={{ padding:2,borderBottomWidth:1,borderColor: focused ? '#1a4981':'white' }}>
-                        <Image source={require('../assets/images/icons/home.png')} />
+                        <Icon name="home" size={28} color="#1a4981"/>
                     </View>
                 )
             }}

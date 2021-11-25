@@ -28,16 +28,18 @@ function DashboardScreen(props) {
                             </View>
                         </View>
                     </TouchableOpacity>
-                    <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
-                        <Image source={require('../assets/images/icons/second_op.png')} 
-                            style={{width:40,height:40}}
-                            resizeMode="contain"    
-                        />
-                        <View>
-                            <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Second</Text>
-                            <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Opinion</Text>
+                    <TouchableOpacity onPress={() =>navigation.navigate('SecondOpinionScreen')}>
+                        <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
+                            <Image source={require('../assets/images/icons/second_op.png')} 
+                                style={{width:40,height:40}}
+                                resizeMode="contain"    
+                            />
+                            <View>
+                                <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Second</Text>
+                                <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Opinion</Text>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.tabsRow}>
                     <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
@@ -50,36 +52,42 @@ function DashboardScreen(props) {
                             <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Service</Text>
                         </View>
                     </View>
-                    <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
-                        <Image source={require('../assets/images/icons/pharmacy.png')} 
-                            style={{width:40,height:40}}
-                            resizeMode="contain"    
-                        />
-                        <View>
-                            <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Pharmacy</Text>
+                    <TouchableOpacity onPress={() =>navigation.navigate('PharmacyScreen')}>
+                        <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
+                            <Image source={require('../assets/images/icons/pharmacy.png')} 
+                                style={{width:40,height:40}}
+                                resizeMode="contain"    
+                            />
+                            <View>
+                                <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Pharmacy</Text>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.tabsRow}>
-                    <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
-                        <Image source={require('../assets/images/icons/lab_tests.png')} 
-                            style={{width:40,height:40}}
-                            resizeMode="contain"    
-                        />
-                        <View>
-                            <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Lab Tests</Text>
+                    <TouchableOpacity onPress={() =>navigation.navigate('LabTestsScreen')}>
+                        <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
+                            <Image source={require('../assets/images/icons/lab_tests.png')} 
+                                style={{width:40,height:40}}
+                                resizeMode="contain"    
+                            />
+                            <View>
+                                <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Lab Tests</Text>
+                            </View>
                         </View>
-                    </View>
-                    <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
-                        <Image source={require('../assets/images/icons/diagnostic.png')} 
-                            style={{width:40,height:40}}
-                            resizeMode="contain"
-                        />
-                        <View>
-                            <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Diagnostics/</Text>
-                            <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Radiology</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() =>navigation.navigate('DiagnosticScreen')}>
+                        <View style={[styles.tabsCell,globalstyle.defaultThemeBgColor]}>
+                            <Image source={require('../assets/images/icons/diagnostic.png')} 
+                                style={{width:40,height:40}}
+                                resizeMode="contain"
+                            />
+                            <View>
+                                <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Diagnostics/</Text>
+                                <Text style={[globalstyle.normalFont,styles.tabsCellTitle]}>Radiology</Text>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 <View>
                     <ImageBackground source={require('../assets/images/doctor-bg.png')} resizeMode="contain"  style={styles.getBest}>

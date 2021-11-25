@@ -13,7 +13,9 @@ function InnerAppTitle(props) {
             <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Icon name="arrowleft" size={30} color="#1a4981" />
             </TouchableOpacity>
-             <Text style={[globalstyle.boldHeading,globalstyle.defaultThemeColor,{marginLeft:60}]} >{title}</Text>
+            <View style={{justifyContent:'center',display:'flex',flexDirection:'row',flex:1}}>
+                 <Text style={[globalstyle.boldHeading,globalstyle.defaultThemeColor,]} >{title}</Text>
+            </View>
         </View>
         </>
      );
@@ -27,7 +29,6 @@ const styles = StyleSheet.create({
         marginBottom:hp('1%'),
         display:'flex',
         flexDirection:'row',
-        justifyContent:'flex-start',
         alignContent:'center',
         zIndex:999,
     }
