@@ -38,7 +38,7 @@ function LoginScreen(props) {
                         />
                         <Image source={require('../assets/images/icons/lock.png')} style={globalstyle.textIcon} />
                     </View>
-                    <TouchableOpacity style={[globalstyle.defaultButton,styles.button]} onPress={() => navigation.navigate('DashboardScreen')}>
+                    <TouchableOpacity style={[globalstyle.defaultButton,styles.button]} onPress={() => navigation.navigate('Tabs', { screen: 'DashboardScreen' })}>
                         <Text style={[globalstyle.normalFont,globalstyle.defaultThemeColor,globalstyle.boldFont]}>LOGIN</Text>
                     </TouchableOpacity>
                     <View style={styles.dontHave}>

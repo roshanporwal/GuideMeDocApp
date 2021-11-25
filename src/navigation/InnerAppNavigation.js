@@ -1,14 +1,12 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import screens from '../screens';
-import { NavigationContainer } from '@react-navigation/native';
+import screens from './inner_app_screens';
 
 const Stack = createNativeStackNavigator();
 
-export default function MainNavigation(props) {
+export default function InnerAppNavigation(props) {
   return (
-      <NavigationContainer>
-        <Stack.Navigator initialRouteName="LandingPageOne">
+        <Stack.Navigator initialRouteName="DashboardScreen">
             {screens.map(scr => {
             return (
                 <Stack.Screen
@@ -20,6 +18,5 @@ export default function MainNavigation(props) {
             );
             })}
         </Stack.Navigator>
-      </NavigationContainer>
   );
 }

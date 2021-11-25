@@ -1,4 +1,4 @@
-import DashboardScreen from "./DashboardScreen";
+import TabNavigation from "../navigation/TabNavigation";
 import LandingPageOne from "./LandingPageOne";
 import LandingPageThree from "./LandingPageThree";
 import LandingPageTwo from "./LandingPageTwo";
@@ -6,6 +6,11 @@ import LoginScreen from "./LoginScreen";
 import SignUpScreen from "./SignUpScreen";
 
 export default [
+  {
+    name: 'Tabs',
+    component: TabNavigation,
+    options: { headerShown: false },
+  },
   {
     name: 'LandingPageOne',
     component: LandingPageOne,
@@ -29,11 +34,6 @@ export default [
   {
     name: 'SignUpScreen',
     component: SignUpScreen,
-    options: { headerShown: false },
-  },
-  {
-    name: 'DashboardScreen',
-    component: DashboardScreen,
     options: { headerShown: false },
   },
 ];
