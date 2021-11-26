@@ -4,9 +4,20 @@ import { globalstyle } from '../globalStylsheet';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import authService from '../services/auth_service';
 
 function LoginScreen(props) {
     const {navigation} = props;
+    async function signIn() {
+        const req ={
+            login_id:"nik",
+            password:"nik"
+        }
+         // login new user
+        loginData = await authService.login(req);
+        console.log(loginData)
+      }
+
     return ( 
         <>
                 <Image source={require('../assets/images/first-bg.png')} style={globalstyle.defaultBackground}  />
@@ -25,7 +36,7 @@ function LoginScreen(props) {
                         <TextInput
                             style={globalstyle.defaultTextInput}
                             placeholder="Email/ Phone Number"
-                            placeholderTextColor={'#a2b6d3'}
+                            placeholderTextColor={'#a2b6d3'}                        
                         />
                         <Image source={require('../assets/images/icons/mail.png')} style={globalstyle.textIcon} />
                     </View>
@@ -34,11 +45,11 @@ function LoginScreen(props) {
                             style={globalstyle.defaultTextInput}
                             placeholder="Password"
                             placeholderTextColor={'#a2b6d3'}
-                            secureTextEntry={true}
+                            secureTextEntry={true}                         
                         />
                         <Image source={require('../assets/images/icons/lock.png')} style={globalstyle.textIcon} />
                     </View>
-                    <TouchableOpacity style={[globalstyle.defaultButton,styles.button]} onPress={() => navigation.navigate('Tabs', { screen: 'DashboardScreen' })}>
+                    <TouchableOpacity style={[globalstyle.defaultButton,styles.button]} onPress={() => signIn()/* navigation.navigate('Tabs', { screen: 'DashboardScreen' }) */}>
                         <Text style={[globalstyle.normalFont,globalstyle.defaultThemeColor,globalstyle.boldFont]}>LOGIN</Text>
                     </TouchableOpacity>
                     <View style={styles.dontHave}>

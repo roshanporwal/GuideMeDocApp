@@ -3,9 +3,23 @@ import { Image, Platform, StyleSheet, Text, TextInput, TouchableOpacity, Touchab
 import { globalstyle } from '../globalStylsheet';
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
 import KeyboardAvoidingView from 'react-native/Libraries/Components/Keyboard/KeyboardAvoidingView';
+import authService from '../services/auth_service';
 
 function SignUpScreen(props) {
     const {navigation} = props;
+    async function createAccount() {
+      
+       
+        const req ={
+            name:'hi',
+            login_id:"hi",
+            password:"hi"
+        }
+        // create new user
+        const user = await authService.create(req);
+        console.log(user)
+      }
+
     return ( 
         <>
                 <Image source={require('../assets/images/third-bg.png')} style={globalstyle.defaultBackground}  />
@@ -32,7 +46,7 @@ function SignUpScreen(props) {
                         <TextInput
                             style={globalstyle.defaultTextInput}
                             placeholder="Email/ Phone Number"
-                            placeholderTextColor={'#a2b6d3'}
+                            placeholderTextColor={'#a2b6d3'}                           
                         />
                         <Image source={require('../assets/images/icons/mail.png')} style={globalstyle.textIcon} />
                     </View>
@@ -41,7 +55,7 @@ function SignUpScreen(props) {
                             style={globalstyle.defaultTextInput}
                             placeholder="Password"
                             placeholderTextColor={'#a2b6d3'}
-                            secureTextEntry={true}
+                            secureTextEntry={true}                         
                         />
                         <Image source={require('../assets/images/icons/lock.png')} style={globalstyle.textIcon} />
                     </View>
@@ -54,7 +68,7 @@ function SignUpScreen(props) {
                         />
                         <Image source={require('../assets/images/icons/lock.png')} style={globalstyle.textIcon} />
                     </View>
-                    <TouchableOpacity style={[globalstyle.defaultButton,styles.button]} onPress={() => navigation.navigate('Tabs', { screen: 'DashboardScreen' })}>
+                    <TouchableOpacity style={[globalstyle.defaultButton,styles.button]} onPress={() => createAccount() /* navigation.navigate('Tabs', { screen: 'DashboardScreen' }) */}>
                         <Text style={[globalstyle.normalFont,globalstyle.defaultThemeColor,globalstyle.boldFont]}>SIGN UP</Text>
                     </TouchableOpacity>
                     <View style={styles.dontHave}>
